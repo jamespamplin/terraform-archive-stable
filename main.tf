@@ -28,7 +28,7 @@ variable "source_dir" {
 data "external" "archive" {
   count = var.enabled ? 1 : 0
 
-  program = ["python", "${path.module}/zip.py"]
+  program = ["python3", "${path.module}/zip.py"]
   query = {
     empty_dirs  = jsonencode(var.empty_dirs)
     source_dir  = var.source_dir
